@@ -309,13 +309,13 @@ public final class Gamepad
             targetX = 0;
         }
 
-        angle = (float) Math.atan2(targetX, targetY);
-        rotation = angle * 57.29577951308232f;
+        float targetAngle = (float) Math.atan2(targetX, targetY);
+        //rotation = angle * 57.29577951308232f;
 
         if (isCircle && anyDirection.isDown())
         {
-            targetX = (float) Math.sin(angle);
-            targetY = (float) Math.cos(angle);
+            targetX = (float) Math.sin(targetAngle);
+            targetY = (float) Math.cos(targetAngle);
         }
     }
 
