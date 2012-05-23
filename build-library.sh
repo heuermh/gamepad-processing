@@ -4,6 +4,7 @@ mkdir gamepad
 mkdir gamepad/library
 cp MIT-LICENSE.txt gamepad
 cp README gamepad
+cp library.properties gamepad
 cp -R src gamepad
 cp -R examples gamepad
 cd src
