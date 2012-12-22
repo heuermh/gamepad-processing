@@ -26,7 +26,7 @@ OTHER DEALINGS IN THE SOFTWARE.
  */
 package com.iainlobb.gamepad;
 
-import java.awt.event.KeyEvent;
+import processing.event.KeyEvent;
 
 import java.util.Arrays;
 import java.util.List;
@@ -95,8 +95,8 @@ public final class Gamepad
         this.isCircle = isCircle;
         this.ease = ease;
 
-        applet.registerPost(this);
-        applet.registerKeyEvent(this);
+        applet.registerMethod("post", this);
+        applet.registerMethod("keyEvent", this);
     }
 
 
@@ -109,12 +109,12 @@ public final class Gamepad
     // called by processing on key event
     public void keyEvent(final KeyEvent keyEvent)
     {
-        switch (keyEvent.getID())
+        switch (keyEvent.getAction())
         {
-        case KeyEvent.KEY_PRESSED:
+        case KeyEvent.PRESS:
             keyDown(keyEvent.getKeyCode());
             break;
-        case KeyEvent.KEY_RELEASED:
+        case KeyEvent.RELEASE:
             keyUp(keyEvent.getKeyCode());
             break;
         default:
@@ -137,7 +137,7 @@ public final class Gamepad
 
     public void useArrows(final boolean replaceExisting)
     {
-        mapDirection(KeyEvent.VK_UP, KeyEvent.VK_DOWN, KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, replaceExisting);
+        mapDirection(java.awt.event.KeyEvent.VK_UP, java.awt.event.KeyEvent.VK_DOWN, java.awt.event.KeyEvent.VK_LEFT, java.awt.event.KeyEvent.VK_RIGHT, replaceExisting);
     }
 
     public void useWASD()
@@ -147,7 +147,7 @@ public final class Gamepad
 
     public void useWASD(final boolean replaceExisting)
     {
-        mapDirection(KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_A, KeyEvent.VK_D, replaceExisting);
+        mapDirection(java.awt.event.KeyEvent.VK_W, java.awt.event.KeyEvent.VK_S, java.awt.event.KeyEvent.VK_A, java.awt.event.KeyEvent.VK_D, replaceExisting);
     }
 
     public void useIJKL()
@@ -157,7 +157,7 @@ public final class Gamepad
 
     public void useIJKL(final boolean replaceExisting)
     {
-        mapDirection(KeyEvent.VK_I, KeyEvent.VK_K, KeyEvent.VK_J, KeyEvent.VK_L, replaceExisting);
+        mapDirection(java.awt.event.KeyEvent.VK_I, java.awt.event.KeyEvent.VK_K, java.awt.event.KeyEvent.VK_J, java.awt.event.KeyEvent.VK_L, replaceExisting);
     }
 
     public void useZQSD()
@@ -167,7 +167,7 @@ public final class Gamepad
 
     public void useZQSD(final boolean replaceExisting)
     {
-        mapDirection(KeyEvent.VK_Z, KeyEvent.VK_S, KeyEvent.VK_Q, KeyEvent.VK_D, replaceExisting);
+        mapDirection(java.awt.event.KeyEvent.VK_Z, java.awt.event.KeyEvent.VK_S, java.awt.event.KeyEvent.VK_Q, java.awt.event.KeyEvent.VK_D, replaceExisting);
     }
 
     public void mapFireButtons(final int fire1, final int fire2, final boolean replaceExisting)
@@ -183,7 +183,7 @@ public final class Gamepad
 
     public void useChevrons(final boolean replaceExisting)
     {
-        mapFireButtons(KeyEvent.VK_LESS, KeyEvent.VK_GREATER, replaceExisting);
+        mapFireButtons(java.awt.event.KeyEvent.VK_LESS, java.awt.event.KeyEvent.VK_GREATER, replaceExisting);
     }
 
     public void useGH()
@@ -193,7 +193,7 @@ public final class Gamepad
 
     public void useGH(final boolean replaceExisting)
     {
-        mapFireButtons(KeyEvent.VK_G, KeyEvent.VK_H, replaceExisting);
+        mapFireButtons(java.awt.event.KeyEvent.VK_G, java.awt.event.KeyEvent.VK_H, replaceExisting);
     }
 
     public void useZX()
@@ -203,7 +203,7 @@ public final class Gamepad
 
     public void useZX(final boolean replaceExisting)
     {
-        mapFireButtons(KeyEvent.VK_Z, KeyEvent.VK_X, replaceExisting);
+        mapFireButtons(java.awt.event.KeyEvent.VK_Z, java.awt.event.KeyEvent.VK_X, replaceExisting);
     }
 
     public void useYX()
@@ -213,7 +213,7 @@ public final class Gamepad
 
     public void useYX(final boolean replaceExisting)
     {
-        mapFireButtons(KeyEvent.VK_Y, KeyEvent.VK_X, replaceExisting);
+        mapFireButtons(java.awt.event.KeyEvent.VK_Y, java.awt.event.KeyEvent.VK_X, replaceExisting);
     }
 
     public void useControlSpace()
@@ -223,7 +223,7 @@ public final class Gamepad
 
     public void useControlSpace(final boolean replaceExisting)
     {
-        mapFireButtons(KeyEvent.VK_CONTROL, KeyEvent.VK_SPACE, replaceExisting);
+        mapFireButtons(java.awt.event.KeyEvent.VK_CONTROL, java.awt.event.KeyEvent.VK_SPACE, replaceExisting);
     }
 
     public void update() // step()?
