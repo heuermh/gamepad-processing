@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2010 Iain Lobb, Michael Heuer
+Copyright (c) 2010-2012 Iain Lobb, Michael Heuer
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
