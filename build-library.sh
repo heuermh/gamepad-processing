@@ -8,6 +8,6 @@ cp library.properties gamepad
 cp -R src gamepad
 cp -R examples gamepad
 cd src
-javac -source 1.5 -target 1.5 -classpath ../lib/processing-core-2.0.jar com/iainlobb/gamepad/*.java
+javac -source 1.8 -target 1.8 -classpath ../lib/processing-core-3.3.6.jar com/iainlobb/gamepad/*.java
 jar cvf ../gamepad/library/gamepad.jar com/iainlobb/gamepad/*.class
 cd ..
